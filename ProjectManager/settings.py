@@ -119,11 +119,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
 
-CORS_ALLOW_ALL_ORIGINS = True
-
-# for PRODUCTION!!
-
-# CORS_ALLOWED_ORIGINS = [
-#     "https://your-frontend-domain.com",
-#     "http://localhost:3000",
-# ]
+CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL_ORIGINS', 'False') == 'True'
+CORS_ALLOWED_ORIGINS = [
+    origin.strip() for origin in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if origin.strip()
+]
