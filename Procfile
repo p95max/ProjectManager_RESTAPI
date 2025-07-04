@@ -1,1 +1,1 @@
-web: gunicorn ProjectManager.wsgi
+web: gunicorn ProjectManager.wsgi:application
