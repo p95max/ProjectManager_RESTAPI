@@ -81,7 +81,8 @@ Content-Type: application/json
 {
   "name": "My Project",
   "description": "Описание проекта",
-  "owner": "Иван"
+  "owner": "Иван",
+  "status": "active",
 }
 ```
 
