@@ -7,13 +7,13 @@ from drf_yasg import openapi
 from rest_framework import permissions
 
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Project Manager API",
-      default_version='v1',
-      description="API for projects managing",
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Project Manager API",
+        default_version='v1',
+        description="API for projects managing",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 urlpatterns = [
@@ -22,5 +22,25 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
+"""
+Основные маршруты URL для приложения.
+
+Включает административную панель, API-роуты и документацию.
+Динамически добавляет статические файлы в режиме отладки.
+
+Paths:
+    /admin/: Административная панель Django.
+    /api/: Включение маршрутов приложения projects.
+    /swagger/: Интерфейс Swagger для документации API.
+    /redoc/: Интерфейс ReDoc для документации API.
+"""
+
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+"""
+    Динамическое добавление маршрутов для статических файлов.
+
+    Активно только в режиме отладки (DEBUG=True).
+    Использует настройки STATIC_URL и STATIC_ROOT из settings.
+    """
