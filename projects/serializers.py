@@ -15,6 +15,9 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = '__all__'
+        extra_kwargs = {
+            'name': {'required': True, 'max_length': 255},
+        }
 
 
 class VacancySerializer(serializers.ModelSerializer):
@@ -30,3 +33,7 @@ class VacancySerializer(serializers.ModelSerializer):
     class Meta:
         model = Vacancy
         fields = '__all__'
+        extra_kwargs = {
+            'name': {'required': True, 'max_length': 255},
+            'project': {'required': True},
+        }
