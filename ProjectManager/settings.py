@@ -23,7 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 Определяется как родительская директория текущего файла settings.py.
 """
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'your-fallback-secret')
+SECRET_KEY = os.getenv('SECRET_KEY')
+if not SECRET_KEY:
+    raise ValueError("SECRET_KEY must be set in .env")
 """
 Секретный ключ проекта.
 
