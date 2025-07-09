@@ -31,8 +31,8 @@ https://projectmanager-restapi-1.onrender.com/swagger/
 ---
 
 ## 📝 Документация
-- Swagger UI: [`/swagger/`](http://127.0.0.1:8000/swagger/)
-- ReDoc: [`/redoc/`](http://127.0.0.1:8000/redoc/)
+- Swagger UI: [`/swagger/`](https://projectmanager-restapi-1.onrender.com/swagger/)
+- ReDoc: [`/redoc/`](https://projectmanager-restapi-1.onrender.com/redoc/)
 
 ---
 
