@@ -2,7 +2,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.http import HttpResponse
-from django.shortcuts import redirect
 from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -25,7 +24,7 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
-    path('', lambda r: redirect('schema-swagger-ui')),
+    path('', lambda r: HttpResponse("Project Manager API successfully launched")),
     path('admin/', admin.site.urls),
     path('api/', include('projects.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
