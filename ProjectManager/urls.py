@@ -12,14 +12,21 @@ from rest_framework_simplejwt.views import (
 )
 
 
+from drf_yasg import openapi
+
 schema_view = get_schema_view(
     openapi.Info(
         title="Project Manager API",
         default_version='v1',
-        description="API for projects managing",
+        description="API for projects managing\n\n"
+                    "## 🔑 Авторизация\n"
+                    "1. Получите токен через /api/token/\n"
+                    "2. Вставьте 'Bearer <access_token>' в поле Authorize\n",
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
+    # Добавь это:
+    authentication_classes=[],
 )
 
 

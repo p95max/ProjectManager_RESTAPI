@@ -44,8 +44,8 @@ https://projectmanager-restapi-1.onrender.com/
     ```
     POST /api/token/
     {
-      "username": "your_username",
-      "password": "your_password"
+      "username": "max",
+      "password": "1"
     }
     ```
     В ответе будет `access` и `refresh` токен.
